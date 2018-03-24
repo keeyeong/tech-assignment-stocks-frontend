@@ -1,5 +1,5 @@
 export interface Stock {
   name: string;
-  price: number;
+  currentPrice: number;
   lastUpdate: Date;
 }

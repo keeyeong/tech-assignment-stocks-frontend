@@ -1,4 +1,31 @@
-<p>
-  stock-component works!
-</p>
-<h1>{{stocks}}</h1>
+<mat-card>
+  <mat-card-title>Stocks Dashboard</mat-card-title>
+  <mat-card-content>
+    <table>
+      <tr *ngFor="let stock of stocks">
+        <td>{{stock.name}}</td>
+        <td>{{stock.currentPrice}}</td>
+        <td>{{stock.lastUpdate}}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-table [dataSource]="stocksDataSource">
+      <ng-container matColumnDef="stockName">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let stock">{{stock.name}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="stockPrice">
+        <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+        <mat-cell *matCellDef="let stock">{{stock.currentPrice | currency}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="lastUpdate">
+        <mat-header-cell *matHeaderCellDef>Last Update</mat-header-cell>
+        <mat-cell *matCellDef="let stock">{{stock.lastUpdate}}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+      <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>
+

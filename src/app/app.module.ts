@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatCardModule, MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppComponent } from './app.component';
 import { StockComponent } from './stock-component/stock.component';
 import { StockService } from './stock-component/stock.service';
@@ -14,7 +13,9 @@ import { StockService } from './stock-component/stock.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatCardModule
   ],
   providers: [StockService],
   bootstrap: [AppComponent]
