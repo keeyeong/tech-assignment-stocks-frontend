@@ -1,4 +1,6 @@
-# TechAssignmentStocksFrontend
+# Tech Assignment Stocks Frontend
+
+This project is meant to be a front end of its counter part project, "Tech Assignment Stocks".
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
@@ -6,22 +8,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Development VS Production environment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+By default, when `ng serve` is executed the environment configuration is non-prod. Configuration for prod and non-prod environments are in `src/environments`.
 
-## Build
+To start the server in production mode, use `ng serve --env=prod`. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Rest end points 
 
-## Running unit tests
+The default configured non-prod environment is configured to communicate with REST end points of the backend at `http://localhost:8484`. Change this to suit your environment. The variable is aptly named `restUrlBase`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
