@@ -1,15 +1,6 @@
 <mat-card>
   <mat-card-title>Stocks Dashboard</mat-card-title>
   <mat-card-content>
-    <table>
-      <tr *ngFor="let stock of stocks">
-        <td>{{stock.name}}</td>
-        <td>{{stock.currentPrice}}</td>
-        <td>{{stock.lastUpdate}}</td>
-      </tr>
-    </table>
-  </mat-card-content>
-  <mat-card-content>
     <mat-table [dataSource]="stocksDataSource">
       <ng-container matColumnDef="stockName">
         <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
