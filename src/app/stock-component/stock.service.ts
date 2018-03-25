@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Stock } from './stock.shared';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class StockService {
@@ -9,6 +10,6 @@ export class StockService {
   }
 
   public getStocks(): Observable<Stock[]> {
-    return this.http.get<Stock[]>('http://localhost:8484/api/stocks');
+    return this.http.get<Stock[]>(environment.restUrlBase + '/stocks');
   }
 }

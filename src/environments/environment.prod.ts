@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  restUrlBase: 'http://localhost:8080/api' // change this to match prod
 };
